@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fantasy Gallery | Shirokuma Art Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: white;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 80, 120, 0.12), transparent 35%),
+        radial-gradient(circle at 80% 25%, rgba(80, 120, 255, 0.16), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(150, 80, 255, 0.12), transparent 40%),
+        linear-gradient(180deg, #070816 0%, #0a0d1c 55%, #03040a 100%);
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: rgba(5, 8, 22, 0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .home {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      opacity: 0.75;
+    }
+
+    .home:hover {
+      opacity: 1;
+      text-shadow: 0 0 12px white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 55px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 78px);
+      letter-spacing: 6px;
+      text-shadow:
+        0 0 20px rgba(255,255,255,0.22),
+        0 0 40px rgba(120,100,255,0.25);
+    }
+
+    .hero p {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.62);
+      letter-spacing: 4px;
+    }
+
+    .gallery {
+      width: min(1150px, 90%);
+      margin: 0 auto 100px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 38px;
+    }
+
+    .art {
+      text-decoration: none;
+      color: white;
+      text-align: center;
+    }
+
+    .image-box {
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 620px;
+      object-fit: contain;
+      display: block;
+      background: rgba(0,0,0,0.15);
+    }
+
+    .art:hover .image-box {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow:
+        0 0 30px rgba(255,80,140,0.20),
+        0 0 55px rgba(70,120,255,0.22),
+        0 25px 70px rgba(0,0,0,0.55);
+    }
+
+    .title {
+      margin-top: 17px;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .text {
+      margin: 10px auto 0;
+      max-width: 480px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .number {
+      margin-top: 7px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.38);
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .image-box img {
+        height: auto;
+        max-height: 75vh;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SHIROKUMA ART</div>
+
+  <a class="home" href="index.html">
+    ← HOME
+  </a>
+</header>
+
+<section class="hero">
+  <h1>FANTASY</h1>
+  <p>FANTASY LANDSCAPE COLLECTION</p>
+</section>
+
+<main class="gallery">
+
+  <a class="art"
+     href="ファンタジー風景.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+      <img
+        src="ファンタジー風景.jpeg"
+        alt="ファンタジー風景">
+    </div>
+
+    <div class="title">
+      ファンタジー風景
+    </div>
+
+    <div class="text">
+      夕焼けに染まる空と、風になびく少女の姿。
+      光と大地が溶け合う幻想的な世界を描いた作品です。
+    </div>
+
+    <div class="number">
+      FANTASY 01
+    </div>
+
+  </a>
+
+
+  <a class="art"
+     href="夕焼けの少女2.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+      <img
+        src="夕焼けの少女2.jpeg"
+        alt="夕焼けの少女2">
+    </div>
+
+    <div class="title">
+      夕焼けの少女
+    </div>
+
+    <div class="text">
+      赤く染まる空の下、静かに佇む少女。
+      黄昏の光と風景が織りなす、どこか懐かしい幻想世界です。
+    </div>
+
+    <div class="number">
+      FANTASY 02
+    </div>
+
+  </a>
+
+
+  <a class="art"
+     href="夕焼けの少女3.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+      <img
+        src="夕焼けの少女3.jpeg"
+        alt="夕焼けの少女3">
+    </div>
+
+    <div class="title">
+      黄昏の少女
+    </div>
+
+    <div class="text">
+      光が消えていく一瞬を切り取った幻想的な風景。
+      静かな時間と少女の存在感を描いた作品です。
+    </div>
+
+    <div class="number">
+      FANTASY 03
+    </div>
+
+  </a>
+
+
+  <a class="art"
+     href="sworddancer.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+      <img
+        src="sworddancer.jpeg"
+        alt="Sword Dancer">
+    </div>
+
+    <div class="title">
+      Sword Dancer
+    </div>
+
+    <div class="text">
+      剣とともに舞う幻想の戦士。
+      静と動が交差する、ファンタジー世界の一瞬を描いた作品です。
+    </div>
+
+    <div class="number">
+      FANTASY 04
+    </div>
+
+  </a>
+
+</main>
+
+<footer>
+  © Shirokuma Art Gallery
+</footer>
+
+</body>
+</html>
