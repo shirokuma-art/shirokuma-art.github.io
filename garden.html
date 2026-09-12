@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garden Room | Shirokuma Art Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 170, 190, 0.18), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(120, 200, 160, 0.16), transparent 35%),
+        linear-gradient(180deg, #0d1620 0%, #16261f 55%, #0b1110 100%);
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: 2px;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      color: #cfd8d3;
+      font-size: 16px;
+    }
+
+    .message {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 1.9;
+      color: #e6ece8;
+    }
+
+    .gallery {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(135deg, rgba(255,180,200,0.25), rgba(110,190,140,0.20));
+      color: #dbe6df;
+      font-size: 18px;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #cfd8d3;
+      line-height: 1.7;
+    }
+
+    .back {
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    .back a {
+      color: #ffffff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .back a:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #8ea099;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      header {
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Garden Room</h1>
+    <div class="subtitle">Flowers, Plants & Small Garden Life</div>
+  </header>
+
+  <div class="message">
+    季節の花や植物、日々のガーデニングの記録を展示する小さな庭のページです。<br>
+    ゆっくりと変化していく庭の景色を、写真とともに残していきます。
+  </div>
+
+  <section class="gallery">
+
+    <div class="card">
+      <div class="photo-placeholder">Garden Photo</div>
+      <div class="card-body">
+        <div class="card-title">季節の花</div>
+        <div class="card-text">
+          季節ごとに咲く花を紹介します。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-placeholder">Garden Photo</div>
+      <div class="card-body">
+        <div class="card-title">小さな庭</div>
+        <div class="card-text">
+          庭づくりの変化や日々の様子を記録します。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-placeholder">Garden Photo</div>
+      <div class="card-body">
+        <div class="card-title">お気に入り</div>
+        <div class="card-text">
+          特に気に入っている花や植物を集めます。
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="back">
+    <a href="index.html">← Shirokuma Art Gallery に戻る</a>
+  </div>
+
+  <footer>
+    © Shirokuma Art Gallery
+  </footer>
+
+</body>
+</html>
