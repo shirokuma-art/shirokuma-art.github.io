@@ -2,10 +2,237 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shirokuma Art Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 80, 0.12), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(0, 120, 255, 0.14), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(140, 0, 255, 0.12), transparent 40%),
+        linear-gradient(180deg, #050816 0%, #090d1d 55%, #03040a 100%);
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: rgba(5, 8, 22, 0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 15px;
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      text-shadow: 0 0 12px white;
+    }
+
+    .hero {
+      min-height: 68vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 90px);
+      letter-spacing: 4px;
+      text-shadow:
+        0 0 16px rgba(255,255,255,0.25),
+        0 0 30px rgba(80,120,255,0.25);
+    }
+
+    .hero p {
+      margin-top: 24px;
+      font-size: 18px;
+      color: rgba(255,255,255,0.72);
+      letter-spacing: 2px;
+    }
+
+    .section {
+      width: min(1200px, 90%);
+      margin: 0 auto;
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 28px;
+      letter-spacing: 2px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(135deg,
+          rgba(255,0,80,0.22),
+          rgba(0,120,255,0.18),
+          rgba(255,255,255,0.07),
+          rgba(150,0,255,0.18)
+        );
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+    }
+
+    .card::after {
+      content: "Artwork";
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .child-room {
+      padding: 30px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      line-height: 1.8;
+    }
+
+    .about {
+      padding-bottom: 100px;
+      line-height: 2;
+      color: rgba(255,255,255,0.76);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      color: rgba(255,255,255,0.45);
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        padding: 16px 5%;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      nav a {
+        margin-left: 12px;
+        font-size: 13px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Shirokuma Art Gallery</h1>
-  <p>Welcome to my gallery.</p>
+
+  <header>
+    <div class="logo">SHIROKUMA ART</div>
+
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#child">Child Room</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Shirokuma Art Gallery</h1>
+      <p>AI Illustration & Creative Works</p>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <h2 class="section-title">Gallery</h2>
+
+    <div class="gallery">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </section>
+
+  <section class="section" id="child">
+    <h2 class="section-title">Child Room</h2>
+
+    <div class="child-room">
+      子どもの作品を紹介するスペースです。<br>
+      工作・イラスト・自由な作品を、ここに少しずつ追加していきます。
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <h2 class="section-title">About</h2>
+
+    <p>
+      AIイラストを中心に、幻想的な夜、光、和のモチーフ、
+      サイバー表現などをテーマに作品を制作しています。
+    </p>
+  </section>
+
+  <footer>
+    © Shirokuma Art Gallery
+  </footer>
+
 </body>
 </html>
