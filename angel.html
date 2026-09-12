@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Angel Gallery | Shirokuma Art Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: white;
+
+      background:
+        radial-gradient(circle at 15% 20%,
+          rgba(255, 40, 100, 0.15),
+          transparent 35%),
+
+        radial-gradient(circle at 85% 25%,
+          rgba(30, 100, 255, 0.18),
+          transparent 35%),
+
+        radial-gradient(circle at 50% 75%,
+          rgba(140, 60, 255, 0.12),
+          transparent 40%),
+
+        linear-gradient(
+          180deg,
+          #050816 0%,
+          #090d1d 55%,
+          #03040a 100%
+        );
+
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 20px 7%;
+
+      background: rgba(5, 8, 22, 0.82);
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .home {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      opacity: 0.75;
+    }
+
+    .home:hover {
+      opacity: 1;
+      text-shadow: 0 0 12px white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 55px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size:
+        clamp(42px, 7vw, 78px);
+
+      letter-spacing: 6px;
+
+      text-shadow:
+        0 0 20px rgba(255,255,255,0.22),
+        0 0 40px rgba(80,120,255,0.25);
+    }
+
+    .hero p {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.62);
+      letter-spacing: 4px;
+    }
+
+    .gallery {
+      width: min(1150px, 90%);
+      margin: 0 auto 100px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 38px;
+    }
+
+    .art {
+      text-decoration: none;
+      color: white;
+      text-align: center;
+    }
+
+    .image-box {
+      position: relative;
+
+      border-radius: 24px;
+      overflow: hidden;
+
+      background:
+        rgba(255,255,255,0.03);
+
+      border:
+        1px solid rgba(255,255,255,0.12);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.45);
+
+      transition:
+        transform 0.35s,
+        box-shadow 0.35s;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 620px;
+
+      object-fit: contain;
+
+      display: block;
+
+      background:
+        rgba(0,0,0,0.15);
+    }
+
+    .art:hover .image-box {
+      transform:
+        translateY(-8px)
+        scale(1.015);
+
+      box-shadow:
+        0 0 30px rgba(255,80,140,0.20),
+        0 0 55px rgba(70,120,255,0.22),
+        0 25px 70px rgba(0,0,0,0.55);
+    }
+
+    .title {
+      margin-top: 17px;
+
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .number {
+      margin-top: 7px;
+
+      font-size: 11px;
+      letter-spacing: 3px;
+
+      color:
+        rgba(255,255,255,0.38);
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+
+      color:
+        rgba(255,255,255,0.4);
+
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 800px) {
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .image-box img {
+        height: auto;
+        max-height: 75vh;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="logo">
+    SHIROKUMA ART
+  </div>
+
+  <a class="home" href="index.html">
+    ← HOME
+  </a>
+
+</header>
+
+
+<section class="hero">
+
+  <h1>ANGEL</h1>
+
+  <p>
+    CELESTIAL COLLECTION
+  </p>
+
+</section>
+
+
+<main class="gallery">
+
+
+  <a class="art"
+     href="双天使の月夜セレナーデ.png"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="双天使の月夜セレナーデ.png"
+        alt="双天使の月夜セレナーデ">
+
+    </div>
+
+    <div class="title">
+      双天使の月夜セレナーデ
+    </div>
+
+    <div class="number">
+      ANGEL 01
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="星空で触れ合う天使たち.png"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="星空で触れ合う天使たち.png"
+        alt="星空で触れ合う天使たち">
+
+    </div>
+
+    <div class="title">
+      星空で触れ合う天使たち
+    </div>
+
+    <div class="number">
+      ANGEL 02
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="ともに歩む天使.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="ともに歩む天使.jpeg"
+        alt="ともに歩む天使">
+
+    </div>
+
+    <div class="title">
+      ともに歩む天使
+    </div>
+
+    <div class="number">
+      ANGEL 03
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="照れる天使.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="照れる天使.jpeg"
+        alt="照れる天使">
+
+    </div>
+
+    <div class="title">
+      照れる天使
+    </div>
+
+    <div class="number">
+      ANGEL 04
+    </div>
+
+  </a>
+
+
+</main>
+
+
+<footer>
+  © Shirokuma Art Gallery
+</footer>
+
+
+</body>
+</html>
