@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alice Gallery | Shirokuma Art Gallery</title>
+
+  <meta name="description" content="Shirokuma Art GalleryのAlice Gallery。不思議の国のアリスをモチーフに、幻想、電脳、硝子、紅黒など異なる世界観で描いたAIイラスト作品を展示しています。">
+  <meta name="keywords" content="AIイラスト, AIアート, アリス, 不思議の国のアリス, Alice, Wonderland, ファンタジー, Shirokuma Art Gallery">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Shirokuma Art Gallery">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 80, 0.10), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(0, 120, 255, 0.14), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(140, 0, 255, 0.12), transparent 40%),
+        linear-gradient(180deg, #050813 0%, #090d1d 45%, #050713 100%);
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 72px);
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    header p {
+      margin-top: 15px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.18em;
+      font-size: 14px;
+    }
+
+    .back-link {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 45px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 10px 22px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .gallery {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      padding-bottom: 70px;
+    }
+
+    .art-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 55px rgba(0,0,0,0.5);
+    }
+
+    .art-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .art-info {
+      padding: 22px 24px 26px;
+    }
+
+    .art-number {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.18em;
+    }
+
+    .art-title {
+      margin-top: 8px;
+      font-size: 22px;
+      letter-spacing: 0.05em;
+    }
+
+    .art-comment {
+      margin-top: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    .wide img {
+      max-height: 720px;
+      object-fit: cover;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 45px;
+      color: rgba(255,255,255,0.45);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding-top: 50px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .wide {
+        grid-column: auto;
+      }
+
+      .art-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Alice Gallery</h1>
+    <p>DOWN THE RABBIT HOLE</p>
+  </header>
+
+  <a href="index.html" class="back-link">← Galleryへ戻る</a>
+
+  <main class="gallery">
+
+    <article class="art-card wide">
+      <img src="夢幻のワンダーランド.jpeg" alt="夢幻のワンダーランド">
+      <div class="art-info">
+        <div class="art-number">ALICE 01</div>
+        <div class="art-title">夢幻のワンダーランド</div>
+        <div class="art-comment">
+          時計、城、白兎、兵隊、蝶。いくつもの夢が砕けた鏡の中で重なり合う、もうひとつのワンダーランド。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="電脳のワンダーランド.jpeg" alt="電脳のワンダーランド">
+      <div class="art-info">
+        <div class="art-number">ALICE 02</div>
+        <div class="art-title">電脳のワンダーランド</div>
+        <div class="art-comment">
+          白兎を追った先は、0と1で構築された世界。幻想とデジタルが交差する新しいワンダーランド。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="硝子迷宮のアリス.jpeg" alt="硝子迷宮のアリス">
+      <div class="art-info">
+        <div class="art-number">ALICE 03</div>
+        <div class="art-title">硝子迷宮のアリス</div>
+        <div class="art-comment">
+          無数の硝子片に映る城と時計。迷宮の奥でチェシャ猫が静かに微笑む。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="夢鍵の螺旋.jpeg" alt="夢鍵の螺旋">
+      <div class="art-info">
+        <div class="art-number">ALICE 04</div>
+        <div class="art-title">夢鍵の螺旋</div>
+        <div class="art-comment">
+          鍵の先に続く螺旋の世界。落ちているのか、昇っているのかさえ分からない夢の途中。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="涙のワンダーランド.jpeg" alt="涙のワンダーランド">
+      <div class="art-info">
+        <div class="art-number">ALICE 05</div>
+        <div class="art-title">涙のワンダーランド</div>
+        <div class="art-comment">
+          美しい世界ほど、時に切ない。こぼれ落ちる涙の向こうに残る、淡いワンダーランド。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="紅黒のティーパーティー.jpeg" alt="紅黒のティーパーティー">
+      <div class="art-info">
+        <div class="art-number">ALICE 06</div>
+        <div class="art-title">紅黒のティーパーティー</div>
+        <div class="art-comment">
+          赤、黒、白だけで彩られた異質なお茶会。甘さの奥に狂気が静かに潜む。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="白兎を抱く少女.jpeg" alt="白兎を抱く少女">
+      <div class="art-info">
+        <div class="art-number">ALICE 07</div>
+        <div class="art-title">白兎を抱く少女</div>
+        <div class="art-comment">
+          不思議の国へ導いた白兎を胸に抱く少女。夢と現実の境界にある静かな時間。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="狂ったお茶会.jpeg" alt="狂ったお茶会">
+      <div class="art-info">
+        <div class="art-number">ALICE 08</div>
+        <div class="art-title">狂ったお茶会</div>
+        <div class="art-comment">
+          おとぎ話の終わりに待っていたのは、少しだけ狂った世界。少女はもう、追われるだけのアリスではない。
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    © Shirokuma Art Gallery
+  </footer>
+
+</body>
+</html>
