@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>作品の利用について | Shirokuma Art Gallery</title>
+  <meta name="description" content="Shirokuma Art Galleryに掲載している作品の利用についてのご案内です。">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Shirokuma Art">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: white;
+
+      background:
+        radial-gradient(circle at 15% 20%,
+          rgba(255, 40, 100, 0.15),
+          transparent 35%),
+
+        radial-gradient(circle at 85% 25%,
+          rgba(30, 100, 255, 0.18),
+          transparent 35%),
+
+        radial-gradient(circle at 50% 75%,
+          rgba(140, 60, 255, 0.12),
+          transparent 40%),
+
+        linear-gradient(
+          180deg,
+          #050816 0%,
+          #090d1d 55%,
+          #03040a 100%
+        );
+
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 20px 7%;
+
+      background: rgba(5, 8, 22, 0.82);
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .home {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      opacity: 0.75;
+    }
+
+    .home:hover {
+      opacity: 1;
+      text-shadow: 0 0 12px white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 45px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size: clamp(34px, 6vw, 64px);
+      letter-spacing: 5px;
+
+      text-shadow:
+        0 0 20px rgba(255,255,255,0.22),
+        0 0 40px rgba(80,120,255,0.25);
+    }
+
+    .hero p {
+      margin-top: 18px;
+
+      color: rgba(255,255,255,0.55);
+
+      font-size: 13px;
+      letter-spacing: 4px;
+    }
+
+    .policy {
+      width: min(850px, 88%);
+      margin: 0 auto 100px;
+
+      padding: 45px 50px;
+
+      background: rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.12);
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    .policy h2 {
+      margin-top: 0;
+      margin-bottom: 28px;
+
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    .policy p {
+      margin: 0 0 24px;
+
+      font-size: 14px;
+      line-height: 2.1;
+
+      color: rgba(255,255,255,0.72);
+    }
+
+    .policy strong {
+      color: white;
+    }
+
+    .contact {
+      margin-top: 40px;
+      padding-top: 32px;
+
+      text-align: center;
+
+      border-top:
+        1px solid rgba(255,255,255,0.10);
+    }
+
+    .contact h2 {
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      margin-bottom: 22px;
+    }
+
+    .x-button {
+      display: inline-block;
+
+      padding: 15px 32px;
+
+      color: white;
+      text-decoration: none;
+
+      font-size: 14px;
+      letter-spacing: 2px;
+
+      border:
+        1px solid rgba(255,255,255,0.35);
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,255,255,0.06);
+
+      transition: 0.3s;
+    }
+
+    .x-button:hover {
+      transform: translateY(-3px);
+
+      background:
+        rgba(255,255,255,0.12);
+
+      box-shadow:
+        0 0 25px rgba(80,120,255,0.25);
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+
+      color: rgba(255,255,255,0.4);
+
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 600px) {
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+      }
+
+      .policy {
+        width: 90%;
+        padding: 30px 24px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="logo">
+    SHIROKUMA ART
+  </div>
+
+  <a class="home" href="index.html">
+    ← HOME
+  </a>
+
+</header>
+
+
+<section class="hero">
+
+  <h1>
+    作品の利用について
+  </h1>
+
+  <p>
+    ARTWORK POLICY
+  </p>
+
+</section>
+
+
+<main class="policy">
+
+  <h2>
+    Shirokuma Art Gallery
+  </h2>
+
+  <p>
+    Shirokuma Art Galleryをご覧いただき、
+    ありがとうございます。
+  </p>
+
+  <p>
+    当サイトに掲載している作品は、
+    個人で鑑賞していただくことを目的として公開しています。
+  </p>
+
+  <p>
+    作品の<strong>無断転載・無断使用・再配布・販売・商用利用・
+    作者を偽っての公開</strong>はご遠慮ください。
+  </p>
+
+  <p>
+    また、掲載作品をAI画像生成サービス等へ入力し、
+    作品そのものや作風を再利用する目的で使用することも
+    ご遠慮ください。
+  </p>
+
+  <p>
+    SNS、Webサイト、動画、印刷物などで作品の使用を希望される場合は、
+    <strong>使用する前にXのDMよりご連絡ください。</strong>
+    使用目的を確認したうえで、個別にお返事いたします。
+  </p>
+
+  <p>
+    個人で楽しむための閲覧や端末への保存は問題ありません。
+    ただし、保存した作品を第三者へ配布したり、
+    別の場所で公開したりすることは個人利用には含まれません。
+  </p>
+
+  <p>
+    作品の紹介を目的として、
+    Shirokuma Art Galleryへのリンクを掲載していただくことは歓迎します。
+  </p>
+
+
+  <div class="contact">
+
+    <h2>
+      CONTACT
+    </h2>
+
+    <p>
+      作品利用についてのお問い合わせは、
+      XのDMからお願いいたします。
+    </p>
+
+    <a
+      class="x-button"
+      href="https://x.com/gfgfgggggdssssd"
+      target="_blank"
+      rel="noopener noreferrer">
+      Xで連絡する
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer>
+  © Shirokuma Art Gallery
+</footer>
+
+
+</body>
+</html>
