@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Night Sky Gallery | Shirokuma Art Gallery</title>
+
+  <meta name="description" content="Shirokuma Art GalleryのNight Sky Gallery。星空、銀河、光、水面などをテーマにした幻想的なAIイラスト作品を展示しています。">
+  <meta name="keywords" content="AIイラスト, AIアート, 星空, 銀河, 夜空, 星, ファンタジー, Shirokuma Art Gallery">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Shirokuma Art Gallery">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 90, 255, 0.14), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(120, 0, 255, 0.14), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(255, 80, 180, 0.08), transparent 40%),
+        linear-gradient(180deg, #020617 0%, #05091c 50%, #02030c 100%);
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 72px);
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    header p {
+      margin-top: 15px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.18em;
+      font-size: 14px;
+    }
+
+    .back-link {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 45px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 10px 22px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .gallery {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      padding-bottom: 70px;
+    }
+
+    .art-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 55px rgba(0,0,0,0.5);
+    }
+
+    .art-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .art-info {
+      padding: 22px 24px 26px;
+    }
+
+    .art-number {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.18em;
+    }
+
+    .art-title {
+      margin-top: 8px;
+      font-size: 22px;
+      letter-spacing: 0.05em;
+    }
+
+    .art-comment {
+      margin-top: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 45px;
+      color: rgba(255,255,255,0.45);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .art-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Night Sky Gallery</h1>
+    <p>BEYOND THE STARS</p>
+  </header>
+
+  <a href="index.html" class="back-link">← Galleryへ戻る</a>
+
+  <main class="gallery">
+
+    <article class="art-card">
+      <img src="銀河鉄道の夜.jpeg" alt="銀河鉄道の夜">
+      <div class="art-info">
+        <div class="art-number">NIGHT 01</div>
+        <div class="art-title">銀河鉄道の夜</div>
+        <div class="art-comment">
+          星々の海を走る列車。夜空の向こうへ続く、静かな旅の始まり。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星河を歩く.jpeg" alt="星河を歩く">
+      <div class="art-info">
+        <div class="art-number">NIGHT 02</div>
+        <div class="art-title">星河を歩く</div>
+        <div class="art-comment">
+          水面と星空がひとつにつながる場所を、ひとり静かに歩いていく。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星蝶の女王.jpeg" alt="星蝶の女王">
+      <div class="art-info">
+        <div class="art-number">NIGHT 03</div>
+        <div class="art-title">星蝶の女王</div>
+        <div class="art-comment">
+          星の光をまとった蝶たちが舞う夜。銀色の女王がそっと手を伸ばす。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="あの日見た夜空.jpeg" alt="あの日見た夜空">
+      <div class="art-info">
+        <div class="art-number">NIGHT 04</div>
+        <div class="art-title">あの日見た夜空</div>
+        <div class="art-comment">
+          忘れたくない夜空。いつかまた、同じ星を誰かと見上げるために。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星降る水鏡.jpeg" alt="星降る水鏡">
+      <div class="art-info">
+        <div class="art-number">NIGHT 05</div>
+        <div class="art-title">星降る水鏡</div>
+        <div class="art-comment">
+          星が落ちるたび、水面に新しい光の輪が広がっていく。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星纏いの姫.jpeg" alt="星纏いの姫">
+      <div class="art-info">
+        <div class="art-number">NIGHT 06</div>
+        <div class="art-title">星纏いの姫</div>
+        <div class="art-comment">
+          夜空そのものを纏うように、星々の光がドレスへと溶け込んでいく。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星の散歩道.jpeg" alt="星の散歩道">
+      <div class="art-info">
+        <div class="art-number">NIGHT 07</div>
+        <div class="art-title">星の散歩道</div>
+        <div class="art-comment">
+          足元に広がる無数の星。夢の中を歩くような、光の散歩道。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星空の雨傘.jpeg" alt="星空の雨傘">
+      <div class="art-info">
+        <div class="art-number">NIGHT 08</div>
+        <div class="art-title">星空の雨傘</div>
+        <div class="art-comment">
+          星の雨を受け止める透明な傘。夜空をそのまま閉じ込めたような一枚。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星を聴く.jpeg" alt="星を聴く">
+      <div class="art-info">
+        <div class="art-number">NIGHT 09</div>
+        <div class="art-title">星を聴く</div>
+        <div class="art-comment">
+          夜空にも音があるなら、きっとこんな旋律。星の声に耳を澄ませる。
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card">
+      <img src="星屑の舞.jpeg" alt="星屑の舞">
+      <div class="art-info">
+        <div class="art-number">NIGHT 10</div>
+        <div class="art-title">星屑の舞</div>
+        <div class="art-comment">
+          星と水と光が舞い上がる。夜空そのものが踊り出す、きらめきの瞬間。
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    © Shirokuma Art Gallery
+  </footer>
+
+</body>
+</html>
