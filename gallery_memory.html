@@ -5,33 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>閉じ込められた想い | Shirokuma Art Gallery</title>
+
   <meta name="description" content="硝子、光、季節、星空。小さな世界の中に閉じ込められた想いを描いたAIイラスト作品集。">
-  <meta name="keywords" content="AIイラスト, AIアート, 幻想, 和風, 星空, 金魚, 記憶, Shirokuma Art Gallery">
+  <meta name="keywords" content="AIイラスト, AIアート, 幻想, 星空, 記憶, 金魚, 夏, Shirokuma Art Gallery">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Shirokuma Art">
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
+
     body {
       margin: 0;
-      font-family: "Yu Gothic", "Meiryo", sans-serif;
+
+      font-family:
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+
       color: white;
 
       background:
-        radial-gradient(circle at 15% 20%,
+
+        radial-gradient(
+          circle at 15% 20%,
           rgba(255, 40, 100, 0.15),
-          transparent 35%),
+          transparent 35%
+        ),
 
-        radial-gradient(circle at 85% 25%,
+        radial-gradient(
+          circle at 85% 25%,
           rgba(30, 100, 255, 0.18),
-          transparent 35%),
+          transparent 35%
+        ),
 
-        radial-gradient(circle at 50% 75%,
+        radial-gradient(
+          circle at 50% 75%,
           rgba(140, 60, 255, 0.12),
-          transparent 40%),
+          transparent 40%
+        ),
 
         linear-gradient(
           180deg,
@@ -42,6 +57,7 @@
 
       min-height: 100vh;
     }
+
 
     header {
       position: sticky;
@@ -54,12 +70,16 @@
 
       padding: 20px 7%;
 
-      background: rgba(5, 8, 22, 0.82);
-      backdrop-filter: blur(12px);
+      background:
+        rgba(5, 8, 22, 0.82);
+
+      backdrop-filter:
+        blur(12px);
 
       border-bottom:
         1px solid rgba(255,255,255,0.08);
     }
+
 
     .logo {
       font-size: 24px;
@@ -67,92 +87,137 @@
       letter-spacing: 2px;
     }
 
+
     .home {
       color: white;
+
       text-decoration: none;
+
       font-size: 14px;
+
       letter-spacing: 2px;
+
       opacity: 0.75;
     }
 
+
     .home:hover {
       opacity: 1;
-      text-shadow: 0 0 12px white;
+
+      text-shadow:
+        0 0 12px white;
     }
+
 
     .hero {
       text-align: center;
-      padding: 90px 20px 55px;
+
+      padding:
+        90px 20px 60px;
     }
+
 
     .hero h1 {
       margin: 0;
 
       font-size:
-        clamp(42px, 7vw, 78px);
+        clamp(38px, 6vw, 72px);
 
       letter-spacing: 6px;
 
       text-shadow:
-        0 0 20px rgba(255,255,255,0.22),
-        0 0 40px rgba(80,120,255,0.25);
+
+        0 0 20px
+        rgba(255,255,255,0.22),
+
+        0 0 40px
+        rgba(80,120,255,0.25);
     }
 
-    .hero p {
+
+    .hero .english {
       margin-top: 20px;
-      color: rgba(255,255,255,0.62);
+
+      color:
+        rgba(255,255,255,0.62);
+
       letter-spacing: 4px;
     }
 
+
     .intro {
-      max-width: 700px;
-      margin: 32px auto 0;
+      margin:
+        35px auto 0;
+
+      max-width: 650px;
+
+      padding:
+        0 20px;
 
       font-size: 14px;
+
       line-height: 2;
 
-      color: rgba(255,255,255,0.62);
+      letter-spacing: 1px;
+
+      color:
+        rgba(255,255,255,0.62);
     }
 
+
     .gallery {
-      width: min(1150px, 90%);
-      margin: 0 auto 100px;
+      width:
+        min(1150px, 90%);
+
+      margin:
+        0 auto 100px;
 
       display: grid;
+
       grid-template-columns:
         repeat(2, 1fr);
 
-      gap: 38px;
+      gap:
+        45px 38px;
     }
+
 
     .art {
       text-decoration: none;
+
       color: white;
+
       text-align: center;
     }
+
 
     .image-box {
       position: relative;
 
       border-radius: 24px;
+
       overflow: hidden;
 
       background:
         rgba(255,255,255,0.03);
 
       border:
-        1px solid rgba(255,255,255,0.12);
+        1px solid
+        rgba(255,255,255,0.12);
 
       box-shadow:
-        0 20px 60px rgba(0,0,0,0.45);
+        0 20px 60px
+        rgba(0,0,0,0.45);
 
       transition:
         transform 0.35s,
         box-shadow 0.35s;
     }
 
+
     .image-box img {
       width: 100%;
+
       height: 620px;
 
       object-fit: contain;
@@ -163,81 +228,136 @@
         rgba(0,0,0,0.15);
     }
 
+
     .art:hover .image-box {
+
       transform:
         translateY(-8px)
         scale(1.015);
 
       box-shadow:
-        0 0 30px rgba(255,80,140,0.20),
-        0 0 55px rgba(70,120,255,0.22),
-        0 25px 70px rgba(0,0,0,0.55);
+
+        0 0 30px
+        rgba(255,80,140,0.20),
+
+        0 0 55px
+        rgba(70,120,255,0.22),
+
+        0 25px 70px
+        rgba(0,0,0,0.55);
     }
+
 
     .title {
-      margin-top: 17px;
+      margin-top: 20px;
 
-      font-size: 18px;
-      letter-spacing: 2px;
+      font-size: 20px;
+
+      font-weight: 500;
+
+      letter-spacing: 3px;
+
+      color:
+        rgba(255,255,255,0.96);
+
+      text-shadow:
+        0 0 10px
+        rgba(255,255,255,0.08);
     }
+
 
     .comment {
-      margin: 10px auto 0;
+      margin:
+        12px auto 0;
+
       max-width: 480px;
 
-      font-size: 13px;
-      line-height: 1.8;
+      padding:
+        0 10px;
 
-      color: rgba(255,255,255,0.58);
+      font-size: 13px;
+
+      line-height: 1.9;
+
+      letter-spacing: 0.5px;
+
+      color:
+        rgba(255,255,255,0.58);
     }
 
+
     .number {
-      margin-top: 7px;
+      margin-top: 10px;
 
       font-size: 11px;
-      letter-spacing: 3px;
+
+      letter-spacing: 4px;
 
       color:
         rgba(255,255,255,0.38);
     }
 
+
     footer {
       text-align: center;
+
       padding: 35px;
 
       color:
         rgba(255,255,255,0.4);
 
       font-size: 12px;
+
       letter-spacing: 2px;
     }
+
+
 
     @media (max-width: 800px) {
 
       .gallery {
         grid-template-columns: 1fr;
-        gap: 55px;
+
+        gap: 60px;
       }
+
 
       .image-box img {
         height: auto;
+
         max-height: 75vh;
       }
+
 
       .logo {
         font-size: 18px;
       }
 
+
       .hero {
         padding-top: 65px;
       }
+
+
+      .hero h1 {
+        letter-spacing: 3px;
+      }
+
+
+      .title {
+        font-size: 19px;
+      }
+
     }
 
+
   </style>
+
 </head>
 
 
 <body>
+
 
 <header>
 
@@ -245,39 +365,51 @@
     SHIROKUMA ART
   </div>
 
-  <a class="home" href="index.html">
+  <a
+    class="home"
+    href="index.html">
     ← HOME
   </a>
 
 </header>
 
 
+
 <section class="hero">
 
-  <h1>閉じ込められた想い</h1>
+  <h1>
+    閉じ込められた想い
+  </h1>
 
-  <p>
+  <div class="english">
     MEMORIES WITHIN
-  </p>
+  </div>
+
 
   <div class="intro">
+
     硝子の中に。<br>
     光の中に。<br>
     季節の中に。<br><br>
 
-    いつか見た景色や、忘れたくない一瞬を、<br>
+    いつか見た景色や、<br>
+    忘れたくない一瞬を、<br>
     小さな世界の中に閉じ込めました。
+
   </div>
 
 </section>
 
 
+
 <main class="gallery">
 
 
-  <a class="art"
-     href="泡沫に閉じ込めた夢.jpeg"
-     target="_blank">
+
+  <a
+    class="art"
+    href="泡沫に閉じ込めた夢.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -292,8 +424,8 @@
     </div>
 
     <div class="comment">
-      消えてしまうからこそ美しい。
-      儚い夢を、ひとつの泡の中に閉じ込めた作品です。
+      消えてしまうからこそ美しい。<br>
+      儚い夢を、ひとつの泡の中に。
     </div>
 
     <div class="number">
@@ -304,9 +436,10 @@
 
 
 
-  <a class="art"
-     href="空に放した金魚.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="空に放した金魚.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -321,8 +454,8 @@
     </div>
 
     <div class="comment">
-      水の中だけが世界じゃない。
-      想いはいつか、空さえ自由に泳いでゆきます。
+      水の中だけが世界じゃない。<br>
+      想いはいつか、空さえ泳いでゆく。
     </div>
 
     <div class="number">
@@ -333,9 +466,10 @@
 
 
 
-  <a class="art"
-     href="星空をひとくち.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="星空をひとくち.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -350,8 +484,8 @@
     </div>
 
     <div class="comment">
-      夏祭りの夜に見上げた星空。
-      甘い記憶とともに、小さな硝子の中へ閉じ込めました。
+      夏祭りの夜に見上げた星空。<br>
+      甘い記憶と一緒に閉じ込めて。
     </div>
 
     <div class="number">
@@ -362,9 +496,10 @@
 
 
 
-  <a class="art"
-     href="硝子の中のふたり.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="硝子の中のふたり.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -379,8 +514,8 @@
     </div>
 
     <div class="comment">
-      近くにいるのに、触れられない。
-      硝子の向こうで交わる、ふたつの静かな想いを描きました。
+      近くにいるのに、触れられない。<br>
+      硝子の向こうで交わる、ふたつの想い。
     </div>
 
     <div class="number">
@@ -391,9 +526,10 @@
 
 
 
-  <a class="art"
-     href="あの日の夏を描いて.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="あの日の夏を描いて.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -408,8 +544,8 @@
     </div>
 
     <div class="comment">
-      過ぎ去った夏は戻らない。
-      だからこそ、あの日の景色をキャンバスの中に残しました。
+      過ぎ去った夏は戻らない。<br>
+      だから、キャンバスの中に残しておく。
     </div>
 
     <div class="number">
@@ -420,9 +556,10 @@
 
 
 
-  <a class="art"
-     href="掌の中の未来.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="掌の中の未来.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -437,8 +574,8 @@
     </div>
 
     <div class="comment">
-      まだ誰も知らない未来の街。
-      小さな世界の中に、無限に広がる可能性を描きました。
+      まだ誰も知らない未来の街。<br>
+      小さな世界に、無限の可能性を。
     </div>
 
     <div class="number">
@@ -449,9 +586,10 @@
 
 
 
-  <a class="art"
-     href="掬いきれない夏.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="掬いきれない夏.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -466,8 +604,8 @@
     </div>
 
     <div class="comment">
-      水面に揺れる、あの夏の記憶。
-      掬おうとするほど、指の間から静かにこぼれてゆきます。
+      水面に揺れる、あの夏の記憶。<br>
+      掬おうとするほど、指の間からこぼれてゆく。
     </div>
 
     <div class="number">
@@ -478,9 +616,10 @@
 
 
 
-  <a class="art"
-     href="傘の中の夜空.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="傘の中の夜空.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -495,8 +634,8 @@
     </div>
 
     <div class="comment">
-      雨の日だけ開く、私だけの夜空。
-      傘の中に広がる、小さな宇宙を描いた作品です。
+      雨の日だけ開く、私だけの夜空。<br>
+      傘の中に、小さな宇宙を閉じ込めて。
     </div>
 
     <div class="number">
@@ -507,9 +646,10 @@
 
 
 
-  <a class="art"
-     href="色彩の記憶.jpeg"
-     target="_blank">
+  <a
+    class="art"
+    href="色彩の記憶.jpeg"
+    target="_blank">
 
     <div class="image-box">
 
@@ -524,8 +664,8 @@
     </div>
 
     <div class="comment">
-      時が過ぎても、色だけは鮮やかに残る。
-      忘れたくない記憶の色を、一枚の世界に閉じ込めました。
+      時が過ぎても、色だけは鮮やかに残る。<br>
+      忘れたくない記憶の、その色を。
     </div>
 
     <div class="number">
@@ -535,7 +675,9 @@
   </a>
 
 
+
 </main>
+
 
 
 <footer>
