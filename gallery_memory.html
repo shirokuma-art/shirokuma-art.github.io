@@ -1,357 +1,545 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>閉じ込められた想い | Shirokuma Art Gallery</title>
+  <meta name="description" content="硝子、光、季節、星空。小さな世界の中に閉じ込められた想いを描いたAIイラスト作品集。">
+  <meta name="keywords" content="AIイラスト, AIアート, 幻想, 和風, 星空, 金魚, 記憶, Shirokuma Art Gallery">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Shirokuma Art">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: white;
+
+      background:
+        radial-gradient(circle at 15% 20%,
+          rgba(255, 40, 100, 0.15),
+          transparent 35%),
+
+        radial-gradient(circle at 85% 25%,
+          rgba(30, 100, 255, 0.18),
+          transparent 35%),
+
+        radial-gradient(circle at 50% 75%,
+          rgba(140, 60, 255, 0.12),
+          transparent 40%),
+
+        linear-gradient(
+          180deg,
+          #050816 0%,
+          #090d1d 55%,
+          #03040a 100%
+        );
+
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 20px 7%;
+
+      background: rgba(5, 8, 22, 0.82);
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .home {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      opacity: 0.75;
+    }
+
+    .home:hover {
+      opacity: 1;
+      text-shadow: 0 0 12px white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 55px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size:
+        clamp(42px, 7vw, 78px);
+
+      letter-spacing: 6px;
+
+      text-shadow:
+        0 0 20px rgba(255,255,255,0.22),
+        0 0 40px rgba(80,120,255,0.25);
+    }
 
-<title>閉じ込められた想い | Shirokuma Art Gallery</title>
+    .hero p {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.62);
+      letter-spacing: 4px;
+    }
 
-<meta name="description"
-content="硝子、光、季節、星空。小さな世界の中に閉じ込められた想いを描いたAIイラスト作品集。">
+    .intro {
+      max-width: 700px;
+      margin: 32px auto 0;
 
-<style>
+      font-size: 14px;
+      line-height: 2;
 
-* {
-  box-sizing: border-box;
-}
+      color: rgba(255,255,255,0.62);
+    }
 
-body {
-  margin: 0;
-  font-family: "Yu Gothic", "Meiryo", sans-serif;
-  color: white;
+    .gallery {
+      width: min(1150px, 90%);
+      margin: 0 auto 100px;
 
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,0,80,0.10), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(0,120,255,0.14), transparent 35%),
-    radial-gradient(circle at 50% 80%, rgba(140,0,255,0.12), transparent 40%),
-    linear-gradient(180deg,#050816 0%,#090d1d 55%,#03040a 100%);
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
 
-  min-height: 100vh;
-}
+      gap: 38px;
+    }
 
+    .art {
+      text-decoration: none;
+      color: white;
+      text-align: center;
+    }
 
-/* HEADER */
+    .image-box {
+      position: relative;
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+      border-radius: 24px;
+      overflow: hidden;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+      background:
+        rgba(255,255,255,0.03);
 
-  padding: 20px 7%;
+      border:
+        1px solid rgba(255,255,255,0.12);
 
-  background: rgba(5,8,22,0.82);
-  backdrop-filter: blur(12px);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.45);
 
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+      transition:
+        transform 0.35s,
+        box-shadow 0.35s;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
+    .image-box img {
+      width: 100%;
+      height: 620px;
 
-header a {
-  color: white;
-  text-decoration: none;
-  opacity: 0.75;
-}
+      object-fit: contain;
 
-header a:hover {
-  opacity: 1;
-}
+      display: block;
 
+      background:
+        rgba(0,0,0,0.15);
+    }
 
-/* TITLE */
+    .art:hover .image-box {
+      transform:
+        translateY(-8px)
+        scale(1.015);
 
-.hero {
-  text-align: center;
-  padding: 100px 20px 70px;
-}
+      box-shadow:
+        0 0 30px rgba(255,80,140,0.20),
+        0 0 55px rgba(70,120,255,0.22),
+        0 25px 70px rgba(0,0,0,0.55);
+    }
 
-.hero h1 {
-  margin: 0;
+    .title {
+      margin-top: 17px;
 
-  font-size: clamp(38px,7vw,72px);
-  letter-spacing: 7px;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
 
-  text-shadow:
-    0 0 18px rgba(255,255,255,0.22),
-    0 0 35px rgba(100,120,255,0.22);
-}
+    .comment {
+      margin: 10px auto 0;
+      max-width: 480px;
 
-.subtitle {
-  margin-top: 22px;
+      font-size: 13px;
+      line-height: 1.8;
 
-  font-size: 14px;
-  letter-spacing: 4px;
+      color: rgba(255,255,255,0.58);
+    }
 
-  color: rgba(255,255,255,0.50);
-}
+    .number {
+      margin-top: 7px;
 
-.intro {
-  max-width: 650px;
+      font-size: 11px;
+      letter-spacing: 3px;
 
-  margin: 35px auto 0;
+      color:
+        rgba(255,255,255,0.38);
+    }
 
-  line-height: 2.2;
-  font-size: 14px;
+    footer {
+      text-align: center;
+      padding: 35px;
 
-  color: rgba(255,255,255,0.65);
-}
+      color:
+        rgba(255,255,255,0.4);
 
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
 
-/* GALLERY */
+    @media (max-width: 800px) {
 
-.gallery {
-  width: min(1150px,90%);
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
 
-  margin: 0 auto 100px;
+      .image-box img {
+        height: auto;
+        max-height: 75vh;
+      }
 
-  display: grid;
+      .logo {
+        font-size: 18px;
+      }
 
-  grid-template-columns:
-    repeat(3,1fr);
+      .hero {
+        padding-top: 65px;
+      }
+    }
 
-  gap: 35px;
-}
-
-.art {
-  text-align: center;
-}
-
-.art img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-
-  object-fit: cover;
-
-  border-radius: 18px;
-
-  box-shadow:
-    0 18px 50px rgba(0,0,0,0.55),
-    0 0 25px rgba(100,120,255,0.08);
-
-  transition: 0.3s;
-}
-
-.art img:hover {
-  transform:
-    translateY(-7px)
-    scale(1.015);
-
-  box-shadow:
-    0 25px 65px rgba(0,0,0,0.65),
-    0 0 35px rgba(100,120,255,0.18);
-}
-
-.art-title {
-  margin-top: 15px;
-
-  font-size: 16px;
-
-  letter-spacing: 2px;
-
-  color: rgba(255,255,255,0.85);
-}
-
-.art-comment {
-  margin-top: 10px;
-  padding: 0 8px;
-  font-size: 13px;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.58);
-}
-
-
-/* FOOTER */
-
-footer {
-  text-align: center;
-
-  padding: 40px 20px 60px;
-
-  color: rgba(255,255,255,0.40);
-
-  font-size: 13px;
-}
-
-
-/* MOBILE */
-
-@media(max-width:800px) {
-
-  .gallery {
-    grid-template-columns:
-      repeat(2,1fr);
-
-    gap: 22px;
-  }
-
-}
-
-@media(max-width:520px) {
-
-  header {
-    padding: 16px 5%;
-  }
-
-  .logo {
-    font-size: 18px;
-  }
-
-  .hero {
-    padding-top: 70px;
-  }
-
-  .gallery {
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
+  </style>
 </head>
 
 
 <body>
 
-
 <header>
 
-<div class="logo">
-SHIROKUMA ART
-</div>
+  <div class="logo">
+    SHIROKUMA ART
+  </div>
 
-<a href="index.html">
-← Gallery Top
-</a>
+  <a class="home" href="index.html">
+    ← HOME
+  </a>
 
 </header>
 
 
-
 <section class="hero">
 
-<h1>
-閉じ込められた想い
-</h1>
+  <h1>閉じ込められた想い</h1>
 
-<div class="subtitle">
-MEMORIES WITHIN
-</div>
+  <p>
+    MEMORIES WITHIN
+  </p>
 
-<div class="intro">
+  <div class="intro">
+    硝子の中に。<br>
+    光の中に。<br>
+    季節の中に。<br><br>
 
-硝子の中に。<br>
-光の中に。<br>
-季節の中に。<br><br>
-
-いつか見た景色や、
-忘れたくない一瞬を、
-小さな世界の中に閉じ込めました。
-
-</div>
-
-</section>
-
-
-
-<section class="gallery">
-
-  <div class="art">
-    <img src="泡沫に閉じ込めた夢.jpeg" alt="泡沫に閉じ込めた夢">
-    <div class="art-title">泡沫に閉じ込めた夢</div>
-    <div class="art-comment">
-      消えてしまうからこそ美しい。<br>
-      儚い夢を、ひとつの泡の中に。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="空に放した金魚.jpeg" alt="空に放した金魚">
-    <div class="art-title">空に放した金魚</div>
-    <div class="art-comment">
-      水の中だけが世界じゃない。<br>
-      想いはいつか、空さえ泳いでゆく。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="星空をひとくち.jpeg" alt="星空をひとくち">
-    <div class="art-title">星空をひとくち</div>
-    <div class="art-comment">
-      夏祭りの夜に見上げた星空。<br>
-      甘い記憶と一緒に閉じ込めて。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="硝子の中のふたり.jpeg" alt="硝子の中のふたり">
-    <div class="art-title">硝子の中のふたり</div>
-    <div class="art-comment">
-      近くにいるのに、触れられない。<br>
-      硝子の向こうで交わる、ふたつの想い。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="あの日の夏を描いて.jpeg" alt="あの日の夏を描いて">
-    <div class="art-title">あの日の夏を描いて</div>
-    <div class="art-comment">
-      過ぎ去った夏は戻らない。<br>
-      だから、キャンバスの中に残しておく。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="掌の中の未来.jpeg" alt="掌の中の未来">
-    <div class="art-title">掌の中の未来</div>
-    <div class="art-comment">
-      まだ誰も知らない未来の街。<br>
-      小さな世界に、無限の可能性を。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="掬いきれない夏.jpeg" alt="掬いきれない夏">
-    <div class="art-title">掬いきれない夏</div>
-    <div class="art-comment">
-      水面に揺れる、あの夏の記憶。<br>
-      掬おうとするほど、指の間からこぼれてゆく。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="傘の中の夜空.jpeg" alt="傘の中の夜空">
-    <div class="art-title">傘の中の夜空</div>
-    <div class="art-comment">
-      雨の日だけ開く、私だけの夜空。<br>
-      傘の中に、小さな宇宙を閉じ込めて。
-    </div>
-  </div>
-
-  <div class="art">
-    <img src="色彩の記憶.jpeg" alt="色彩の記憶">
-    <div class="art-title">色彩の記憶</div>
-    <div class="art-comment">
-      時が過ぎても、色だけは鮮やかに残る。<br>
-      忘れたくない記憶の、その色を。
-    </div>
+    いつか見た景色や、忘れたくない一瞬を、<br>
+    小さな世界の中に閉じ込めました。
   </div>
 
 </section>
 
+
+<main class="gallery">
+
+
+  <a class="art"
+     href="泡沫に閉じ込めた夢.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="泡沫に閉じ込めた夢.jpeg"
+        alt="泡沫に閉じ込めた夢">
+
+    </div>
+
+    <div class="title">
+      泡沫に閉じ込めた夢
+    </div>
+
+    <div class="comment">
+      消えてしまうからこそ美しい。
+      儚い夢を、ひとつの泡の中に閉じ込めた作品です。
+    </div>
+
+    <div class="number">
+      MEMORY 01
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="空に放した金魚.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="空に放した金魚.jpeg"
+        alt="空に放した金魚">
+
+    </div>
+
+    <div class="title">
+      空に放した金魚
+    </div>
+
+    <div class="comment">
+      水の中だけが世界じゃない。
+      想いはいつか、空さえ自由に泳いでゆきます。
+    </div>
+
+    <div class="number">
+      MEMORY 02
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="星空をひとくち.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="星空をひとくち.jpeg"
+        alt="星空をひとくち">
+
+    </div>
+
+    <div class="title">
+      星空をひとくち
+    </div>
+
+    <div class="comment">
+      夏祭りの夜に見上げた星空。
+      甘い記憶とともに、小さな硝子の中へ閉じ込めました。
+    </div>
+
+    <div class="number">
+      MEMORY 03
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="硝子の中のふたり.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="硝子の中のふたり.jpeg"
+        alt="硝子の中のふたり">
+
+    </div>
+
+    <div class="title">
+      硝子の中のふたり
+    </div>
+
+    <div class="comment">
+      近くにいるのに、触れられない。
+      硝子の向こうで交わる、ふたつの静かな想いを描きました。
+    </div>
+
+    <div class="number">
+      MEMORY 04
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="あの日の夏を描いて.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="あの日の夏を描いて.jpeg"
+        alt="あの日の夏を描いて">
+
+    </div>
+
+    <div class="title">
+      あの日の夏を描いて
+    </div>
+
+    <div class="comment">
+      過ぎ去った夏は戻らない。
+      だからこそ、あの日の景色をキャンバスの中に残しました。
+    </div>
+
+    <div class="number">
+      MEMORY 05
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="掌の中の未来.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="掌の中の未来.jpeg"
+        alt="掌の中の未来">
+
+    </div>
+
+    <div class="title">
+      掌の中の未来
+    </div>
+
+    <div class="comment">
+      まだ誰も知らない未来の街。
+      小さな世界の中に、無限に広がる可能性を描きました。
+    </div>
+
+    <div class="number">
+      MEMORY 06
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="掬いきれない夏.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="掬いきれない夏.jpeg"
+        alt="掬いきれない夏">
+
+    </div>
+
+    <div class="title">
+      掬いきれない夏
+    </div>
+
+    <div class="comment">
+      水面に揺れる、あの夏の記憶。
+      掬おうとするほど、指の間から静かにこぼれてゆきます。
+    </div>
+
+    <div class="number">
+      MEMORY 07
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="傘の中の夜空.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="傘の中の夜空.jpeg"
+        alt="傘の中の夜空">
+
+    </div>
+
+    <div class="title">
+      傘の中の夜空
+    </div>
+
+    <div class="comment">
+      雨の日だけ開く、私だけの夜空。
+      傘の中に広がる、小さな宇宙を描いた作品です。
+    </div>
+
+    <div class="number">
+      MEMORY 08
+    </div>
+
+  </a>
+
+
+
+  <a class="art"
+     href="色彩の記憶.jpeg"
+     target="_blank">
+
+    <div class="image-box">
+
+      <img
+        src="色彩の記憶.jpeg"
+        alt="色彩の記憶">
+
+    </div>
+
+    <div class="title">
+      色彩の記憶
+    </div>
+
+    <div class="comment">
+      時が過ぎても、色だけは鮮やかに残る。
+      忘れたくない記憶の色を、一枚の世界に閉じ込めました。
+    </div>
+
+    <div class="number">
+      MEMORY 09
+    </div>
+
+  </a>
+
+
+</main>
 
 
 <footer>
-
-© Shirokuma Art Gallery
-
+  © Shirokuma Art Gallery
 </footer>
 
 
