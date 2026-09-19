@@ -91,6 +91,7 @@
       width: 100%;
       display: block;
       object-fit: cover;
+      cursor: zoom-in;
     }
 
     .art-info {
@@ -132,6 +133,49 @@
       font-size: 13px;
     }
 
+    /* =========================
+       画像拡大表示
+    ========================= */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 45px rgba(255,255,255,0.15);
+      cursor: default;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 25px;
+      color: #ffffff;
+      font-size: 40px;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10000;
+    }
+
     @media (max-width: 760px) {
       header {
         padding-top: 50px;
@@ -149,6 +193,21 @@
       .art-title {
         font-size: 20px;
       }
+
+      .lightbox {
+        padding: 10px;
+      }
+
+      .lightbox img {
+        max-width: 96vw;
+        max-height: 88vh;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 16px;
+        font-size: 36px;
+      }
     }
   </style>
 </head>
@@ -164,6 +223,7 @@
 
   <main class="gallery">
 
+    <!-- ALICE 01 -->
     <article class="art-card wide">
       <img src="夢幻のワンダーランド.jpeg" alt="夢幻のワンダーランド">
       <div class="art-info">
@@ -175,6 +235,7 @@
       </div>
     </article>
 
+    <!-- ALICE 02 -->
     <article class="art-card">
       <img src="電脳のワンダーランド.jpeg" alt="電脳のワンダーランド">
       <div class="art-info">
@@ -186,6 +247,7 @@
       </div>
     </article>
 
+    <!-- ALICE 03 -->
     <article class="art-card">
       <img src="硝子迷宮のアリス.jpeg" alt="硝子迷宮のアリス">
       <div class="art-info">
@@ -197,6 +259,7 @@
       </div>
     </article>
 
+    <!-- ALICE 04 -->
     <article class="art-card">
       <img src="夢鍵の螺旋.jpeg" alt="夢鍵の螺旋">
       <div class="art-info">
@@ -208,6 +271,7 @@
       </div>
     </article>
 
+    <!-- ALICE 05 -->
     <article class="art-card">
       <img src="涙のワンダーランド.jpeg" alt="涙のワンダーランド">
       <div class="art-info">
@@ -219,6 +283,7 @@
       </div>
     </article>
 
+    <!-- ALICE 06 -->
     <article class="art-card">
       <img src="紅黒のティーパーティー.jpeg" alt="紅黒のティーパーティー">
       <div class="art-info">
@@ -230,6 +295,7 @@
       </div>
     </article>
 
+    <!-- ALICE 07 -->
     <article class="art-card">
       <img src="白兎を抱く少女.jpeg" alt="白兎を抱く少女">
       <div class="art-info">
@@ -241,6 +307,7 @@
       </div>
     </article>
 
+    <!-- ALICE 08 -->
     <article class="art-card">
       <img src="狂ったお茶会.jpeg" alt="狂ったお茶会">
       <div class="art-info">
@@ -251,6 +318,8 @@
         </div>
       </div>
     </article>
+
+    <!-- ALICE 09 -->
     <article class="art-card">
       <img src="ガラスのらせん階段.jpeg" alt="ガラスのらせん階段">
       <div class="art-info">
@@ -262,11 +331,63 @@
         </div>
       </div>
     </article>
+
   </main>
 
   <footer>
     © Shirokuma Art Gallery
   </footer>
+
+
+  <!-- =========================
+       画像拡大用ライトボックス
+  ========================== -->
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    const galleryImages = document.querySelectorAll(".art-card img");
+
+    galleryImages.forEach(function(image) {
+      image.addEventListener("click", function() {
+        lightboxImage.src = this.src;
+        lightboxImage.alt = this.alt;
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    lightboxClose.addEventListener("click", function(event) {
+      event.stopPropagation();
+      closeLightbox();
+    });
+
+    lightbox.addEventListener("click", function(event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
 
 </body>
 </html>
