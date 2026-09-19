@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Character Gallery | Shirokuma Art Gallery</title>
+
+  <meta name="description" content="Shirokuma Art GalleryのCharacter Gallery。幻想世界に生きる騎士、エルフ、妖精、和装の少女など、個性豊かなキャラクターを描いたAIイラスト作品を展示しています。">
+  <meta name="keywords" content="AIイラスト, AIアート, キャラクター, エルフ, ファンタジー, 幻想, 少女, Character, Shirokuma Art Gallery">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Shirokuma Art Gallery">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 80, 0.10), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(0, 120, 255, 0.14), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(140, 0, 255, 0.12), transparent 40%),
+        linear-gradient(180deg, #050813 0%, #090d1d 45%, #050713 100%);
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 72px);
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    header p {
+      margin-top: 15px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.18em;
+      font-size: 14px;
+    }
+
+    .back-link {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 45px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 10px 22px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .gallery {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      padding-bottom: 70px;
+    }
+
+    .art-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 55px rgba(0,0,0,0.5);
+    }
+
+    .art-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .art-info {
+      padding: 22px 24px 26px;
+    }
+
+    .art-number {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.18em;
+    }
+
+    .art-title {
+      margin-top: 8px;
+      font-size: 22px;
+      letter-spacing: 0.05em;
+    }
+
+    .art-comment {
+      margin-top: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    .wide img {
+      max-height: 720px;
+      object-fit: cover;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 45px;
+      color: rgba(255,255,255,0.45);
+      font-size: 13px;
+    }
+
+    /* =========================
+       画像拡大表示
+    ========================= */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 45px rgba(255,255,255,0.15);
+      cursor: default;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 25px;
+      color: #ffffff;
+      font-size: 40px;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10000;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding-top: 50px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .wide {
+        grid-column: auto;
+      }
+
+      .art-title {
+        font-size: 20px;
+      }
+
+      .lightbox {
+        padding: 10px;
+      }
+
+      .lightbox img {
+        max-width: 96vw;
+        max-height: 88vh;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 16px;
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Character Gallery</h1>
+    <p>CHARACTERS OF SHIROKUMA ART</p>
+  </header>
+
+  <a href="index.html" class="back-link">← Galleryへ戻る</a>
+
+  <main class="gallery">
+
+    <!-- CHARACTER 01 -->
+    <article class="art-card wide">
+      <img src="character-01-slime-knight.jpg" alt="スライムナイト">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 01</div>
+        <div class="art-title">スライムナイト</div>
+        <div class="art-comment">
+          大きなスライムと旅をする白銀の騎士。幻想世界の冒険を、少しだけ優しく描いたひととき。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 02 -->
+    <article class="art-card">
+      <img src="character-02-eyes.jpg" alt="瞳に抱かれて">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 02</div>
+        <div class="art-title">瞳に抱かれて</div>
+        <div class="art-comment">
+          無数の瞳に囲まれながら、ひとつの瞳を静かに抱く少女。見つめる者と、見つめられる者の境界。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 03 -->
+    <article class="art-card">
+      <img src="character-03-saturn.jpg" alt="星を掌に">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 03</div>
+        <div class="art-title">星を掌に</div>
+        <div class="art-comment">
+          掌に浮かぶ小さな惑星。遠い宇宙の光を見つめる、星界の住人。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 04 -->
+    <article class="art-card">
+      <img src="character-04-white-fox.jpg" alt="白狐の花嫁">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 04</div>
+        <div class="art-title">白狐の花嫁</div>
+        <div class="art-comment">
+          白銀の髪と紅白の花に包まれた妖狐。月夜の社で静かにこちらを見つめる。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 05 -->
+    <article class="art-card">
+      <img src="character-05-thunder-elf.jpg" alt="紫電の騎士">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 05</div>
+        <div class="art-title">紫電の騎士</div>
+        <div class="art-comment">
+          紅と紫の雷光を纏い、剣を振るうエルフの騎士。静かな美しさと激しい力が交差する瞬間。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 06 -->
+    <article class="art-card">
+      <img src="character-06-sunflower-elf.jpg" alt="向日葵のエルフ">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 06</div>
+        <div class="art-title">向日葵のエルフ</div>
+        <div class="art-comment">
+          真夏の陽射しと一面の向日葵。幻想世界にも、こんな何気ない夏の日がある。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 07 -->
+    <article class="art-card">
+      <img src="character-07-summer-night.jpg" alt="星涼み">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 07</div>
+        <div class="art-title">星涼み</div>
+        <div class="art-comment">
+          青い花を纏った浴衣姿の少女。風鈴の音と星明かりに包まれる、静かな夏の夜。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 08 -->
+    <article class="art-card">
+      <img src="character-08-purple-butterfly.jpg" alt="紫蝶">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 08</div>
+        <div class="art-title">紫蝶</div>
+        <div class="art-comment">
+          紫の蝶と宝石に覆われた少女。光と影の狭間で、蝶たちは静かに羽を広げる。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 09 -->
+    <article class="art-card">
+      <img src="character-09-blue-rose.jpg" alt="蒼薔薇の姫">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 09</div>
+        <div class="art-title">蒼薔薇の姫</div>
+        <div class="art-comment">
+          無数の青い薔薇と宝石に包まれた少女。青だけで紡がれた、透明な幻想。
+        </div>
+      </div>
+    </article>
+
+    <!-- CHARACTER 10 -->
+    <article class="art-card">
+      <img src="character-10-blue-flame-rose.jpg" alt="蒼炎の薔薇">
+      <div class="art-info">
+        <div class="art-number">CHARACTER 10</div>
+        <div class="art-title">蒼炎の薔薇</div>
+        <div class="art-comment">
+          青い炎を宿した一輪の薔薇。その光に触れるように、少女は静かに顔を寄せる。
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    © Shirokuma Art Gallery
+  </footer>
+
+  <!-- 画像拡大用ライトボックス -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    const galleryImages = document.querySelectorAll(".art-card img");
+
+    galleryImages.forEach(function(image) {
+      image.addEventListener("click", function() {
+        lightboxImage.src = this.src;
+        lightboxImage.alt = this.alt;
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    lightboxClose.addEventListener("click", function(event) {
+      event.stopPropagation();
+      closeLightbox();
+    });
+
+    lightbox.addEventListener("click", function(event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>
